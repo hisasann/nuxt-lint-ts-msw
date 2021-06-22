@@ -11,5 +11,9 @@ module.exports = {
   ],
   plugins: [],
   // add your custom rules here
-  rules: {},
-}
+  rules: {
+    // staging などでログを出したいなどの用途があるので off にしている
+    // https://eslint.org/docs/rules/no-console
+    'no-console': 'off',
+  },
+};
