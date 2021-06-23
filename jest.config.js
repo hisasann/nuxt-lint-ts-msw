@@ -15,4 +15,5 @@ module.exports = {
     '<rootDir>/components/**/*.vue',
     '<rootDir>/pages/**/*.vue',
   ],
+  setupFilesAfterEnv: ['./__setup__/setup.ts'],
 };
