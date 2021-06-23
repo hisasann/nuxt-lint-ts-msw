@@ -1,7 +1,7 @@
 export default () => {
   if (process.env.NODE_ENV === 'development') {
-    const { worker } = require('../mocks/browser')
-    worker.start()
-    console.log('worker started')
+    const { worker } = require('../mocks/browser');
+    worker.start();
+    console.log('worker started');
   }
 };

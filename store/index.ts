@@ -1,27 +1,27 @@
-import Vue from 'vue'
-import { AxiosRequestConfig } from 'axios'
+import Vue from 'vue';
+import { AxiosRequestConfig } from 'axios';
 
 /**
  * レスポンス json オブジェクト用インターフェイス
  */
 export interface ApiInterface {
-  id: string
-  name: string
+  id: string;
+  name: string;
 }
 
 /**
  * store 用インターフェイス
  */
 export interface StateInterface {
-  result: (ApiInterface)[]
+  result: ApiInterface[];
 }
 
 /**
  * state
  */
 export const state = (): StateInterface => ({
-  result: [{ id: 'initial id', name: 'initial name' }]
-})
+  result: [{ id: 'initial id', name: 'initial name' }],
+});
 
 /**
  * getters
@@ -29,12 +29,12 @@ export const state = (): StateInterface => ({
 export const getters = {
   getResult(state: StateInterface): ApiInterface | undefined {
     if (!state.result || state.result.length <= 0) {
-      return
+      return;
     }
 
-    return state.result[0]
-  }
-}
+    return state.result[0];
+  },
+};
 
 /**
  * mutations
@@ -58,9 +58,9 @@ export const mutations = {
     // })
 
     // 配列をそのまま result に入れる場合
-    state.result = apiResult
-  }
-}
+    state.result = apiResult;
+  },
+};
 
 /**
  * actions
@@ -69,22 +69,21 @@ export const actions = {
   async fetchApi(
     this: Vue,
     // @ts-ignore
-    { state, commit }: any,
+    { _, commit }: any
   ): Promise<void> {
     try {
       // https://uncle-javascript.com/weird-nuxt-3-axios-data-fetch
       // @ts-ignore
       const { data }: any = await this.$axios.get(
         '/users',
-        {
-        } as AxiosRequestConfig // https://github.com/axios/axios/blob/master/index.d.ts
-      )
-      console.log('apiResult:', data)
+        {} as AxiosRequestConfig // https://github.com/axios/axios/blob/master/index.d.ts
+      );
+      console.log('apiResult:', data);
 
       // 値をストアに保存
-      commit('saveApiResult', data)
+      commit('saveApiResult', data);
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-  }
-}
+  },
+};

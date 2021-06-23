@@ -10,49 +10,49 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
 export type DataType = {
-  value1: string
+  value1: string;
 };
 
 // via https://qiita.com/is_ryo/items/6fc799ba4214db61d8ab
 export default Vue.extend({
-  data(): DataType {
-    return {
-      value1: 'initial value',
-    }
-  },
   // data をリアクティブに更新するならこちらを使う
   async asyncData({ $axios }) {
     // この /users がモックサーバーを見に行く
-    const { data } = await $axios.get(`/users`)
+    const { data } = await $axios.get(`/users`);
 
     return {
-      value1: data[0].name
-    }
+      value1: data[0].name,
+    };
+  },
+  data(): DataType {
+    return {
+      value1: 'initial value',
+    };
   },
   // Vuex を使うならこちらを使う
   async fetch({ store }) {
-    await store.dispatch('fetchApi')
+    await store.dispatch('fetchApi');
   },
   computed: {
     value2() {
-      return this.$store.state.result[1].name
-    }
+      return this.$store.state.result[1].name;
+    },
   },
   mounted(): void {
-    console.log('モック mounted')
+    console.log('モック mounted');
   },
   created(): void {
-    console.log('モック created')
+    console.log('モック created');
     // asyncData や fetch はいずれ廃止されるので、なるべく使わないほうがよいかもしれない
-    //this.fetchApi()
+    // this.fetchApi()
   },
   methods: {
     ...mapActions({
-      fetchApi: 'fetchApi'
-    })
+      fetchApi: 'fetchApi',
+    }),
   },
 });
 </script>
@@ -77,4 +77,3 @@ export default Vue.extend({
   letter-spacing: 1px;
 }
 </style>
-
