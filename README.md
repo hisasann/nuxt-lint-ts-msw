@@ -1,5 +1,14 @@
 # nuxt-lint-ts
 
+## やったこと
+
+- ✅ Mock Service Worker(msw)を使ったモックサーバーの実現
+- ✅ Mock Service Worker(msw)を使ってstoreのAPIテストをモック経由で実現
+
+[Mock Service Worker(msw)をNuxt.jsでモックサーバーとして使ってみる](https://zenn.dev/hisasann/scraps/3020c3246dcdd7)
+
+[Jest+Mock Service Worker(msw)でNuxt.jsのstoreをテストしてみる](https://zenn.dev/hisasann/scraps/63b9f419b6abc3)
+
 ## Build Setup
 
 ```bash
