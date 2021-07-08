@@ -65,8 +65,9 @@ export const mutations = {
 /**
  * actions
  */
+const FETCH_API = 'fetchApi';
 export const actions = {
-  async fetchApi(
+  async [FETCH_API](
     this: Vue,
     // @ts-ignore
     { _, commit }: any
