@@ -16,11 +16,12 @@ export type DataType = {
   value1: string;
 };
 
-const sleep = (time: number) => new Promise<void>(resolve => {
-  setTimeout(() => {
-    resolve()
-  }, time)
-})
+const sleep = (time: number) =>
+  new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
 
 // via https://qiita.com/is_ryo/items/6fc799ba4214db61d8ab
 export default Vue.extend({
@@ -40,7 +41,7 @@ export default Vue.extend({
   },
   // Vuex を使うならこちらを使う
   async fetch({ store }) {
-    //await store.dispatch('fetchApi');
+    // await store.dispatch('fetchApi');
   },
   computed: {
     value2() {
@@ -60,7 +61,7 @@ export default Vue.extend({
   },
   methods: {
     ...mapActions({
-      fetchApi: 'fetchApi'
+      fetchApi: 'fetchApi',
     }),
   },
 });
