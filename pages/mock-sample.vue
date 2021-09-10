@@ -16,6 +16,13 @@ export type DataType = {
   value1: string;
 };
 
+const sleep = (time: number) =>
+  new Promise<void>((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
+
 // via https://qiita.com/is_ryo/items/6fc799ba4214db61d8ab
 export default Vue.extend({
   // data をリアクティブに更新するならこちらを使う
@@ -34,20 +41,23 @@ export default Vue.extend({
   },
   // Vuex を使うならこちらを使う
   async fetch({ store }) {
-    await store.dispatch('fetchApi');
+    // await store.dispatch('fetchApi');
   },
   computed: {
     value2() {
-      return this.$store.state.result[1].name;
+      console.log(1);
+      return this.$store.state.result[1]?.name;
     },
   },
   mounted(): void {
     console.log('モック mounted');
   },
-  created(): void {
+  async created() {
     console.log('モック created');
+    await sleep(1000);
+
     // asyncData や fetch はいずれ廃止されるので、なるべく使わないほうがよいかもしれない
-    // this.fetchApi()
+    this.fetchApi();
   },
   methods: {
     ...mapActions({

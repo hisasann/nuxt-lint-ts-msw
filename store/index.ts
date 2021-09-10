@@ -59,6 +59,16 @@ export const mutations = {
 
     // 配列をそのまま result に入れる場合
     state.result = apiResult;
+    state.result = [
+      {
+        id: '1',
+        name: 'a',
+      },
+      {
+        id: '2',
+        name: '2回目の書き換えた値',
+      },
+    ];
   },
 };
 
