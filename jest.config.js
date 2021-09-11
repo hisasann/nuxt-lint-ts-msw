@@ -1,4 +1,8 @@
 module.exports = {
+  // verbose: true,
+  // preset: '@nuxt/test-utils',
+  // testEnvironment: 'jsdom',
+  testEnvironment: './__setup__/custom-test-env.js',
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
