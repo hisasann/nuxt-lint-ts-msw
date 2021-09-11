@@ -45,7 +45,6 @@ export default Vue.extend({
   },
   computed: {
     value2() {
-      console.log(1);
       return this.$store.state.result[1]?.name;
     },
   },
