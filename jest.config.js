@@ -1,8 +1,9 @@
 module.exports = {
-  // verbose: true,
-  // preset: '@nuxt/test-utils',
-  // testEnvironment: 'jsdom',
-  testEnvironment: './__setup__/custom-test-env.js',
+  'globals': {
+    'ts-jest': {
+      'tsconfig': 'tsconfig.json'
+    }
+  },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
@@ -10,8 +11,8 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
   transform: {
-    '^.+\\.ts$': 'ts-jest',
-    '^.+\\.js$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
   },
   collectCoverage: true,
@@ -20,4 +21,5 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
   ],
   setupFilesAfterEnv: ['./__setup__/setup.ts'],
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$'
 };
