@@ -24,13 +24,14 @@
       ]
     },
     "types": [
-      "@nuxt/types",
       "@types/node",
+      "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/jest"
+      "jest"
     ]
   },
   "exclude": [
+    "cypress",
     "node_modules",
     ".nuxt",
     "dist"
