@@ -15,5 +15,7 @@ module.exports = {
     // staging などでログを出したいなどの用途があるので off にしている
     // https://eslint.org/docs/rules/no-console
     'no-console': 'off',
+    'vue/require-prop-types': 'off',
+    'import/named': 'off',
   },
 };

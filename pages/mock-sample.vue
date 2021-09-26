@@ -40,9 +40,7 @@ export default Vue.extend({
     };
   },
   // Vuex を使うならこちらを使う
-  async fetch({ store }) {
-    // await store.dispatch('fetchApi');
-  },
+  async fetch() {},
   computed: {
     value2() {
       return this.$store.state.result[1]?.name;
