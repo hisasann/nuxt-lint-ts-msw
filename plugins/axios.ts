@@ -1,7 +1,7 @@
 import { Plugin } from '@nuxt/types';
 import { AxiosError } from 'axios';
 
-const axiosPlugin: Plugin = ({ $axios, _app, _req, _error }): void => {
+const axiosPlugin: Plugin = ({ $axios }): void => {
   /**
    * $axios.onResponseError
    */
