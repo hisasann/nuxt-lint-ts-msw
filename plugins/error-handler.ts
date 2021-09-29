@@ -11,7 +11,7 @@ export default function ({ error }: any) {
     console.log('Captured in unhandledrejection EventListener', event.reason);
   });
 
-  Vue.config.errorHandler = (err, vm, info) => {
+  Vue.config.errorHandler = (err, _vm, info) => {
     console.log(`Captured in Vue.config.errorHandler: ${info}`, err);
 
     if (axios.isAxiosError(err)) {

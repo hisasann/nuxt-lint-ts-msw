@@ -11,7 +11,7 @@ app.get('/check', (req, res) => {
   res.send('get parameter client: ' + req.query.p);
 });
 
-app.get('/user/:userId', function (req, res, next) {
+app.get('/user/:userId', function (req, res, _next) {
   console.log('get parameter server', req.params);
   if (req.params.userId !== 'hisasann') {
     res.status(404);

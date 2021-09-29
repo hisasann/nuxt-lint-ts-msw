@@ -1,6 +1,6 @@
 import { createLocalVue } from '@vue/test-utils';
 import axios from 'axios';
-import Vuex from 'vuex';
+import Vuex, { Store } from 'vuex';
 import * as storeIndex from '@/store/index';
 
 // Vue のセットアップ
@@ -12,7 +12,7 @@ describe('storeIndex tests', () => {
 
   beforeEach(() => {
     // @ts-ignore
-    store = new Vuex.Store(storeIndex);
+    store = new Store(storeIndex);
     // これをしておかないと this.$axios が使えない
     store.$axios = axios;
   });

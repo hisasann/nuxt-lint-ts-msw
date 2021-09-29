@@ -4,7 +4,9 @@
       <Logo />
       <h1 class="title">mswを使ってモックサーバーを使うの巻</h1>
       <HelloWorld />
-      <NuxtLink to="/mock-sample" class="button--green"> モックへ </NuxtLink>
+      <NuxtLink id="toMock" to="/mock-sample" class="button--green">
+        モックへ
+      </NuxtLink>
     </div>
   </div>
 </template>

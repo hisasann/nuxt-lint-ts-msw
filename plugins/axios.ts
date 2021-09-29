@@ -1,7 +1,7 @@
 import { Plugin } from '@nuxt/types';
 import { AxiosError } from 'axios';
 
-const axiosPlugin: Plugin = ({ $axios, app, req, error }): void => {
+const axiosPlugin: Plugin = ({ $axios }): void => {
   /**
    * $axios.onResponseError
    */
@@ -12,11 +12,11 @@ const axiosPlugin: Plugin = ({ $axios, app, req, error }): void => {
       return;
     }
 
-    const { status, statusText, config } = response.response;
+    const { status } = response.response;
 
     // 404
     if (status === 404) {
-      const message = statusText;
+      // const message = statusText;
       // ここで error 関数を呼ぶと axios の 404 が発生したら必ずエラーページに遷移する
       // error({ statusCode: status, message });
     }

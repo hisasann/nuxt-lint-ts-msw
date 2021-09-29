@@ -1,8 +1,8 @@
 module.exports = {
-  'globals': {
+  globals: {
     'ts-jest': {
-      'tsconfig': 'tsconfig.json'
-    }
+      tsconfig: 'tsconfig.json',
+    },
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
@@ -10,6 +10,7 @@ module.exports = {
     '^vue$': 'vue/dist/vue.common.js',
   },
   moduleFileExtensions: ['ts', 'js', 'vue', 'json'],
+  modulePathIgnorePatterns: ['<rootDir>/cypress/'],
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
     '^.+\\.jsx?$': 'babel-jest',
@@ -21,5 +22,5 @@ module.exports = {
     '<rootDir>/pages/**/*.vue',
   ],
   setupFilesAfterEnv: ['./__setup__/setup.ts'],
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$'
+  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
 };
