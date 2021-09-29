@@ -1,0 +1,10 @@
+steps:
+- name: node:14
+  entrypoint: yarn
+  args: ['install']
+- name: node:14
+  entrypoint: yarn
+  args: ['run', 'lint']
+- name: node:14
+  entrypoint: yarn
+  args: ['test']
