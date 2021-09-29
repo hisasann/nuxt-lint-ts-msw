@@ -11,6 +11,7 @@
     "lint": "npm run lint:js",
     "lint-fix": "yarn lint:js --fix",
     "test": "jest",
+    "ci": "yarn build && start-server-and-test start http://localhost:3000 cypress:run",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run"
   },
@@ -19,7 +20,8 @@
     "core-js": "^3.9.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "nuxt": "^2.15.3"
+    "nuxt": "^2.15.3",
+    "start-server-and-test": "^1.14.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.3",
