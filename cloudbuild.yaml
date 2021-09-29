@@ -8,3 +8,6 @@ steps:
 - name: node:14
   entrypoint: yarn
   args: ['test']
+- name: node:14
+  entrypoint: yarn
+  args: ['ci']
