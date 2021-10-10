@@ -3,11 +3,19 @@ describe('Check localhost site', () => {
     cy.visit('http://localhost:3000/');
 
     // https://docs.cypress.io/api/commands/title
-    cy.title().should('eq', 'nuxt-lint-ts-msw---');
+    cy.title().should('eq', 'nuxt-lint-ts-msw');
+
+    // https://docs.cypress.io/api/commands/get
+    cy.get('#toMock').click();
+
+    cy.url().should('include', '/mock-sample');
   });
 
   it('localhost の title が取得できるか', () => {
     cy.visit('http://localhost:3000/');
+
+    // https://docs.cypress.io/api/commands/title
+    cy.title().should('eq', 'nuxt-lint-ts-msw');
 
     // https://docs.cypress.io/api/commands/get
     cy.get('#toMock').click();
