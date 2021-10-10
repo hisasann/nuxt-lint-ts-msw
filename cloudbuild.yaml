@@ -1,13 +1,22 @@
 steps:
-- name: node:14
-  entrypoint: yarn
+# install dependencies
+- id: install-dependencies
+  name: node:14
+  entrypoint: npm
   args: ['install']
+
+# lint and test
 - name: node:14
-  entrypoint: yarn
+  entrypoint: npm
   args: ['run', 'lint']
 - name: node:14
-  entrypoint: yarn
+  entrypoint: npm
   args: ['test']
-- name: node:14
-  entrypoint: yarn
-  args: ['ci']
+
+# run cypress
+- name: cypress/included:8.5.0
+  entrypoint: 'npm'
+  args: ['run', 'ci']
+
+options:
+  machineType: 'E2_HIGHCPU_8'
