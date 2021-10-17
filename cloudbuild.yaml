@@ -1,20 +1,23 @@
 steps:
 # install dependencies
-- id: install-dependencies
-  name: node:14
-  entrypoint: npm
+- name: 'node:14'
+  id: install-dependencies
+  entrypoint: 'npm'
   args: ['install']
 
 # lint and test
-- name: node:14
-  entrypoint: npm
+- name: 'node:14'
+  id: Run lint
+  entrypoint: 'npm'
   args: ['run', 'lint']
-- name: node:14
-  entrypoint: npm
+- name: 'node:14'
+  id: Run test
+  entrypoint: 'npm'
   args: ['test']
 
 # run cypress
-- name: cypress/included:8.5.0
+- name: cypress/included:8.6.0
+  id: Run E2Es
   entrypoint: 'npm'
   args: ['run', 'ci']
 
