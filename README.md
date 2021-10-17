@@ -1,4 +1,4 @@
-# nuxt-lint-ts
+# nuxt-lint-ts-msw
 
 ## やったこと
 
