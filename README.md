@@ -2,8 +2,12 @@
 
 ## やったこと
 
-- ✅ Mock Service Worker(msw)を使ったモックサーバーの実現
-- ✅ Mock Service Worker(msw)を使ってstoreのAPIテストをモック経由で実現
+- ✅ Mock Service Worker(msw)を使ったモックサーバーを実現する
+- ✅ Mock Service Worker(msw)を使ってstoreのAPIテストをモック経由で実現する
+- ✅ CypressをGithubActionsで実行する
+- ✅ CypressをCloudBuildで実行する
+
+## 参考記事
 
 [Mock Service Worker(msw)をNuxt.jsでモックサーバーとして使ってみる](https://zenn.dev/hisasann/scraps/3020c3246dcdd7)
 
