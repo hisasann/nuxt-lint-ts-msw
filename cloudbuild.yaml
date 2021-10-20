@@ -16,7 +16,7 @@ steps:
   args: ['test']
 
 # run cypress
-- name: cypress/included:8.6.0
+- name: cypress/included:8.4.1
   id: Run E2Es
   entrypoint: 'yarn'
   args: ['run', 'ci']
