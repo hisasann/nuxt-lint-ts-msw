@@ -2,23 +2,23 @@ steps:
 # install dependencies
 - name: 'node:14'
   id: install-dependencies
-  entrypoint: 'npm'
+  entrypoint: 'yarn'
   args: ['install']
 
 # lint and test
 - name: 'node:14'
   id: Run lint
-  entrypoint: 'npm'
+  entrypoint: 'yarn'
   args: ['run', 'lint']
 - name: 'node:14'
   id: Run test
-  entrypoint: 'npm'
+  entrypoint: 'yarn'
   args: ['test']
 
 # run cypress
 - name: cypress/included:8.6.0
   id: Run E2Es
-  entrypoint: 'npm'
+  entrypoint: 'yarn'
   args: ['run', 'ci']
 
 options:
