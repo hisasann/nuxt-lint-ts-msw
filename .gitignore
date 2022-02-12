@@ -92,3 +92,6 @@ sw.*
 # cypress
 cypress/screenshots
 cypress/videos
+
+# Nuxt Bridge
+.output
